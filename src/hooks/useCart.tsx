@@ -34,9 +34,11 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const addProduct = async (productId: number) => {
     try {
-      // TODO
+      // TODO      
+      console.log("Id adicionar do hook", productId);
     } catch {
       // TODO
+      toast.error('teste msg');
     }
   };
 
