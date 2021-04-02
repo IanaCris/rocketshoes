@@ -27,9 +27,10 @@ const Home = (): JSX.Element => {
 
   const cartItemsAmount = cart.reduce((sumAmount, product) => {
     // TODO
+    sumAmount[product.id] = product.amount;
     
-    console.log("hook sumAmount", sumAmount);
-    console.log("hook product", product);
+    //console.log("hook sumAmount", sumAmount);
+    //console.log("hook product", product);
 
     return sumAmount;
   }, {} as CartItemsAmount)
@@ -55,7 +56,7 @@ const Home = (): JSX.Element => {
         <li>
           <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
-          <span>R$ {product.price}</span>
+          <span>{formatPrice(product.price)}</span>
           <button
             type="button"
             data-testid="add-product-button"
@@ -63,7 +64,7 @@ const Home = (): JSX.Element => {
           >
             <div data-testid="cart-product-quantity">
               <MdAddShoppingCart size={16} color="#FFF" />
-              {/* {cartItemsAmount[product.id] || 0} */} 2
+              {cartItemsAmount[product.id] || 0} 
             </div>
 
             <span>ADICIONAR AO CARRINHO</span>
