@@ -29,9 +29,6 @@ const Home = (): JSX.Element => {
     // TODO
     sumAmount[product.id] = product.amount;
     
-    //console.log("hook sumAmount", sumAmount);
-    //console.log("hook product", product);
-
     return sumAmount;
   }, {} as CartItemsAmount)
 
