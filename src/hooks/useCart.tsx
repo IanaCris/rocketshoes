@@ -63,6 +63,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
       setCart(updatedCart);
       localStorage.setItem('@RocketShoes:cart', JSON.stringify(updatedCart))
+
     } catch {
       // TODO
       toast.error('Erro na adição do produto');

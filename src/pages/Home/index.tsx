@@ -27,9 +27,10 @@ const Home = (): JSX.Element => {
 
   const cartItemsAmount = cart.reduce((sumAmount, product) => {
     // TODO
-    sumAmount[product.id] = product.amount;
+    const newSumAmount = {...sumAmount};
+    newSumAmount[product.id] = product.amount;
     
-    return sumAmount;
+    return newSumAmount;
   }, {} as CartItemsAmount)
 
   useEffect(() => {
