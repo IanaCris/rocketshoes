@@ -29,8 +29,8 @@ const Home = (): JSX.Element => {
     // TODO
     const newSumAmount = {...sumAmount};
     newSumAmount[product.id] = product.amount;
-    
-    return newSumAmount;
+   
+    return sumAmount; 
   }, {} as CartItemsAmount)
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Home = (): JSX.Element => {
   return (
     <ProductList>
       {products.map(product => (
-        <li>
+        <li key={product.id}>
           <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
           <span>{formatPrice(product.price)}</span>
